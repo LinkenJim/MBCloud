@@ -1,0 +1,137 @@
+/* pages/service/questionDetail/questionDetail.wxss */
+.question{
+    display: flex;
+}
+
+.avatar{
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    /*background-color: black;*/
+}
+
+.detail{
+    flex: 1;
+    margin-left: 4px;
+    position: relative;
+}
+
+.detail text{
+    display: block;
+}
+
+.name{
+    color: #576e9f;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.content{
+     color: #444444;
+    font-size: 14px;   
+    margin-bottom: 15px;
+}
+
+.images{
+    /*height: 80px;*/
+    /*display: flex;*/
+    justify-content: space-between;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.images image{
+    display: block;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.doctor_tag {
+    width: 52px;
+    height: 15px;
+    margin-bottom: 5px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+/*底部回复栏*/
+.bottomReply{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    display: flex;
+    z-index: 9999;
+    background-color: #fcfcfc;
+    border-top: 1px solid lightgray;
+    /*overflow: hidden;*/
+}
+
+.textarea_bg {
+    flex: 1;
+    background-color: #ececec;
+    margin: 5px 10px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 6px;
+}
+
+textarea{
+    width: auto;
+    height: 26px;
+    /*background-color: red;*/
+
+}
+
+.bottomBtn{
+    width: 80px;
+    position: relative;
+}
+
+.btnSend{
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    background-color: #d140b5;
+    text-align: center;
+    border-radius: 10px;
+    margin: auto;
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: 50%;
+}
+
+.msgs {
+    background-color: #f0f0f0;
+    padding: 10px 10px 5px 10px;
+}
+
+.msgs_title{
+    margin-bottom: 5px;
+}
+
+.msgs .msgs_name{
+    display: inline;
+    color: #576e9f;
+    font-size: 16px;
+}
+
+.msgs_first_name::after{
+    content: ' 回复 ';
+    color: #444444;
+    font-size: 13px;
+}
+
+.msgs .content{
+    margin-bottom: 0px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.bottomSpace{
+    height: 46px;
+}

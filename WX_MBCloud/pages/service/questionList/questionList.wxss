@@ -1,0 +1,89 @@
+/* pages/service/questionList/questionList.wxss */
+@import "/resource/lib/JYToolBar.wxss";
+
+.toolBar{
+    position: fixed;
+    left: 0px;
+    z-index: 100;
+    width: 100%;
+}
+
+.question{
+    position: relative;
+    margin-bottom: 14px;
+}
+
+.question image{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+
+.question_category image {
+    width: 10px;
+    height: 10px;
+}
+
+.question_category {
+    margin-top: 14px;
+    color: #d140b5;
+    font-size: 12px;
+    display: flex;
+}
+
+.question_category_text{
+    display: block;
+    flex: 1;
+    text-align: right;
+    color: #4098ea;
+    font-size: 15px;
+}
+
+.question_category_text_deal{
+    color: #a6a6a6;
+}
+
+.question text {
+    display: block;
+    margin-left: 30px;
+    /*word-break: keep-all;*/
+    line-height: 22px;
+    color: #313131;
+    font-size: 16px;
+}
+
+.question text::before {
+    content: "问："
+}
+
+.question_answer{
+    display: flex;
+}
+
+.question_answer text{
+    flex: 1;
+    display: block;
+    margin-left: 30px;
+    line-height: 20px;
+    color: #949494;
+    font-size: 14px;
+}
+
+.question_answer text::before {
+    content: "答："
+}
+
+.question_answer image{
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.noMoreData{
+    padding-top: 30px;
+    padding-bottom: 25px;
+    text-align: center;
+    color: #4a4a4a;
+    font-size: 15px;
+}

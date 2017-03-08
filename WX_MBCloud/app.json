@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/service/root/root",
+    "pages/service/questionList/questionList",
+    "pages/service/questionDetail/questionDetail",
+    "pages/service/doctorList/doctorList",
+    "pages/service/doctorDetail/doctorDetail",
+    "pages/service/order/order",
+    "pages/service/orderDetail/orderDetail",
+    "pages/service/caseDetail/caseDetail",
+    "pages/service/ask/ask",
+    "pages/service/bookingList/bookingList",
+    "pages/case/root/root",
+    "pages/case/activityDetail/activityDetail",
+    "pages/case/applyActivity/applyActivity"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "医美云小程序",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f3f3f3"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#ed5a9c",
+    "backgroundColor": "#f5f5f5",
+    "list": [
+      {
+        "pagePath": "pages/service/root/root",
+        "text": "问美",
+        "iconPath": "resource/image/tabbar_organiz_normal@2x.png",
+        "selectedIconPath": "resource/image/tabbar_organiz_highlight@2x.png"
+      },
+      {
+        "pagePath": "pages/case/root/root",
+        "text": "案例",
+        "iconPath": "resource/image/tabbar_surprised_nor@2x.png",
+        "selectedIconPath": "resource/image/tabbar_surprise_highlight@2x.png"
+      }
+    ]
+  }
+}

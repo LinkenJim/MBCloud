@@ -1,0 +1,49 @@
+
+<!--pages/service/questionList/questionList.wxml-->
+<import src="/resource/utils/util.wxml" />
+<import src="/resource/lib/JYTool.wxml" />
+
+<!--导航栏下线模板-->
+<template is="navBottomLine" />
+
+<!--tips模板-->
+<template is="JYTips" data="{{...JYTips}}" />
+
+<!--toolBar-->
+<view class="toolBar">
+  <view wx:for="{{JYlist.list}}" class="toolBarItem {{JYlist.currentIndex == index ? 'selectItem' : ''}}" data-index="{{index}}" bindtap="{{JYlist.action}}">{{item}}
+    <view class="line" style="width:{{JYlist.width ? JYlist.width : 0}}px;display:{{JYlist.currentIndex == index ? 'block' : 'none'}}"></view>
+  </view>
+</view>
+
+<!--toolBarSpace-->
+<template is="toolBarSpace" />
+<view wx:key="id" wx:for="{{questionList}}" class="service_root_section">
+  <view class="service_root_row" bindtap="gotoQuestionDetail" data-item-id="{{item.id}}" data-is-answer="{{item.status}}">
+    <view class="question">
+      <image src="/resource/image/tiwen_iocn.png"></image>
+      <text>{{item.problem}}</text>
+    </view>
+    <block wx:if="{{item.status != '0'}}">
+      <view class="question_answer">
+        <text>{{item.content}}</text>
+        <image src="{{item.doctor_image || '/resource/image/MBC_placeholder.png'}}"></image>
+      </view>
+    </block>
+    <view>
+      <view class="question_category">
+        <view>
+          <image src="/resource/image/label_iocn.png"></image>
+          {{item.tags_title}}
+        </view>
+        <block wx:if="{{item.status == '0'}}">
+          <text class="question_category_text">未回复</text>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+<block wx:if="{{questionList == undefined || questionList.length <= 0}}">
+  <template is="noData" />
+</block>
+<view wx:else class="noMoreData" hidden="{{!noMoreData}}">已无更多数据</view>

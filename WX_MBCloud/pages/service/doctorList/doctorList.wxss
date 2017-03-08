@@ -1,0 +1,117 @@
+@import "/resource/lib/JYToolBar.wxss";
+.header{
+    position: fixed;
+    left: 0px;
+    z-index: 100;
+    width: 100%;
+    height: 80rpx;
+    border-bottom: #cecece 2rpx solid;
+    display: flex;
+    background: white
+}
+.header_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto
+}
+.header_content image{
+    width: 30rpx;
+    height: 20rpx;
+    margin: auto;
+    padding-left: 20rpx;
+}
+.header_line{
+    width: 2rpx;
+    margin: 20rpx;
+    background: #cecece
+}
+.top_height{
+    margin-top: 80rpx;
+}
+.body_item{
+    display: flex;
+    flex-direction: row;
+    background: white;
+    padding: 15px;
+    position: relative;
+}
+.body_item_left{
+    display: flex;
+    flex-direction: column;
+    /*width: 80%;*/
+}
+.body_item_right{
+    display: block;
+    flex: 1;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: absolute;
+    right: 15px;
+    top:50%;
+    transform: translateY(-50%);
+}
+.text{
+    background: #d072e4;
+    padding: 10rpx;
+    color: white;
+    border-radius: 5rpx;
+    font-size: 12px;
+}
+.horizontal_flex image{
+    width: 50px;
+    height: 50px;
+    padding-right: 20rpx;
+}
+.body_item_left_top_tight{
+    margin-top: 5rpx;
+    display: flex;
+    flex-direction: column;
+    flex: 1
+}
+.body_item_goodat{
+    margin-top: 30rpx;
+    font-size: 24rpx;
+    color: #b9a281;
+	word-break:break-all;
+	display:-webkit-box;
+	-webkit-line-clamp:2;
+	-webkit-box-orient:vertical;
+    line-height: 1.5em;
+	overflow:hidden;
+}
+.body_item_text{
+    font-size: 14px;
+}
+
+.postion {
+    margin: 0px 8px;
+    padding: 0px 8px;
+    border-left: 1px solid #c9c9c9;
+    border-right: 1px solid #c9c9c9;
+}
+.body_line{
+    width: 2rpx;
+    margin-top: 5rpx;
+    margin-bottom: 5rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    background: #cecece
+}
+.body_item_left_buttom{
+    margin-top: 30rpx;
+}
+.body_item_left_buttom text{
+    color: #a0a0a0;
+    word-break:break-all;
+	display:-webkit-box;
+	-webkit-line-clamp:2;
+	-webkit-box-orient:vertical;
+    line-height: 1.5em;
+	overflow:hidden;
+    font-size: 14px;
+}
+.item_line{
+    height: 10rpx;
+    background:   #f2f2f2
+}

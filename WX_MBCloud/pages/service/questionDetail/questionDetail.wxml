@@ -1,0 +1,100 @@
+<!--pages/service/questionDetail/questionDetail.wxml-->
+<import src="/resource/utils/util.wxml"/>
+<import src="/resource/lib/JYTool.wxml"/>
+
+<!--导航栏下线模板-->
+<template is="navBottomLine"/>
+
+<!--tips模板-->
+<template is="JYTips" data="{{...JYTips}}"/>
+
+<view  class="service_root_section">
+    <view class="service_root_row" catchtap="clickQuestion">
+        <view class="question">
+            <image class="avatar" src="{{detail.avatarUrl || '/resource/image/MBC_placeholder.png'}}"></image>
+            <view class="detail">
+                <text class="name">{{detail.nickName}}</text>
+                <text class="content">{{detail.problem}}</text>
+                <view class="images">
+                    <image wx:for="{{detail.images.photo}}" src="{{item.url || '/resource/image/MBC_placeholder.png'}}" style="width:{{img_width}}px;height:{{img_width}}px" data-src="{{item.url}}" catchtap="previewImage"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{detail.status == '1'}}">
+        <view class="service_root_row">
+            <view class="question">
+                <image class="avatar" src="{{detail.doctor_image || '/resource/image/MBC_placeholder.png'}}"></image>
+                <view class="detail">
+                    <text class="name">{{detail.doctor_name}}</text>
+                    <image class="doctor_tag" src="/resource/image/organiz_icon_ident@3x.png"></image>
+                    <text class="content">{{detail.content}}</text>
+                    <!--<view class="msgs">
+                        <view>
+                            <view class="msgs_title"><text class="msgs_name msgs_first_name">aaa</text><text class="msgs_name">bbbb</text></view>
+                            <text class="content">开眼角能修复回去吗?请问贵院哪位医生在这方面比较专业</text>
+                        </view>
+                    </view>-->
+                </view>
+            </view>
+        </view>
+    </block>
+    <view wx:for="{{list}}" class="service_root_row" wx:for-item="comment" wx:for-index="i" data-i="{{i}}" catchtap="clickComment">
+        <view class="question">
+            <image class="avatar" src="{{comment.avatarUrl || '/resource/image/MBC_placeholder.png'}}"></image>
+             <view class="detail">
+                <text class="name">{{comment.name}}</text>
+                <text class="content">{{comment.content}}</text>
+                <view class="msgs" wx:for="{{comment.two_children}}" wx:for-item="reply" wx:for-index="j" data-i="{{i}}" data-j="{{j}}" catchtap="clickReply">
+                    <view>
+                        <view class="msgs_title"><text class="msgs_name msgs_first_name">{{reply.name}}</text><text class="msgs_name">{{reply.to_name}}</text></view>
+                        <text class="content">{{reply.content}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+        <!--<view class="service_root_row">
+            <view class="question">
+                <image class="avatar" src="/resource/image/label_iocn.png"></image>
+                <view class="detail">
+                    <text class="name">ffff</text>
+                    <text class="content">开眼角能修复回去吗?请问贵院哪位医生在这方面比较专业</text>
+                    <view class="msgs" wx:for="{{[1,2,3,4,5]}}">
+                        <view>
+                            <view class="msgs_title"><text class="msgs_name msgs_first_name">aaa</text><text class="msgs_name">bbbb</text></view>
+                            <text class="content">开眼角能修复回去吗?请问贵院哪位医生在这方面比较专业</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:for="{{[1,2,3,4,5,6,7,8,8,9,0]}}" class="service_root_row">
+            <view class="question">
+                <image class="avatar" src="/resource/image/label_iocn.png"></image>
+                <view class="detail">
+                    <text class="name">ddd</text>
+                    <text class="content">开眼角能修复回去吗?请问贵院哪位医生在这方面比较专业</text>
+                    <view class="msgs">
+                        <view>
+                            <view class="msgs_title"><text class="msgs_name msgs_first_name">aaa</text><text class="msgs_name">bbbb</text></view>
+                            <text class="content">开眼角能修复回去吗?请问贵院哪位医生在这方面比较专业</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>-->
+</view>
+
+<!--底部占位-->
+<view class="bottomSpace"></view>
+
+<!--底部回复栏   -->
+<view class="bottomReply">
+    <view class="textarea_bg">
+        <textarea maxlength="-1" cursor-spacing="10" placeholder="{{placeholder == '' ? '回复内容：' : '回复 ' + placeholder + '：'}}" fixed="true" bindinput="textInput" value="{{value}}"/>
+    </view>
+    <view class="bottomBtn">
+        <view class="btnSend" catchtap="comment">发送</view>
+    </view>
+</view>

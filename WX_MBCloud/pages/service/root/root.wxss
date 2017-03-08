@@ -1,0 +1,194 @@
+/* pages/service/root/root.wxss */
+@import "/resource/lib/JYToolBar.wxss";
+.topBar{
+    position: fixed;
+    left: 0px;
+    z-index: 100;
+    width: 100%;
+}
+
+
+.service_root_section .mune{
+    padding-right: 25px;
+}
+
+.mune{
+    height: 60px;
+    display: flex;
+    position: relative;
+}
+
+.mune image {
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.mune .more{
+    position: absolute;
+    height: 10px;
+    width: 6px;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 15px;
+}
+
+.mune text {
+    display: block;
+    flex: 1;
+}
+
+.mune_title {
+    color: #404040;
+    font-size: 18px;
+}
+
+.mune_describe {
+    color: #a6a6a6;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.mune view {
+    padding-left: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.logo image{
+    height: 31px;
+    width: 160px;
+}
+
+.logo text {
+    color: #8b8b8b;
+    font-size: 16px;
+    display: block;
+    margin-top: 12px;
+}
+
+.question{
+    position: relative;
+    margin-bottom: 14px;
+}
+
+.question image{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+
+.question_category image {
+    width: 10px;
+    height: 10px;
+}
+
+.question_category {
+    margin-top: 14px;
+    color: #d140b5;
+    font-size: 12px;
+    display: flex;
+}
+
+.question_category_text{
+    display: block;
+    flex: 1;
+    text-align: right;
+    color: #4098ea;
+    font-size: 15px;
+}
+
+.question_category_text_deal{
+    color: #a6a6a6;
+}
+
+.question text {
+    display: block;
+    margin-left: 30px;
+    /*word-break: keep-all;*/
+    line-height: 22px;
+    color: #313131;
+    font-size: 16px;
+}
+
+.question text::before {
+    content: "问："
+}
+
+.lookAll{
+    padding-top: 30px;
+    padding-bottom: 25px;
+    text-align: center;
+    color: #0088de;
+    font-size: 15px;
+}
+
+.question_answer{
+    display: flex;
+}
+
+.question_answer text{
+    flex: 1;
+    display: block;
+    margin-left: 30px;
+    line-height: 20px;
+    color: #949494;
+    font-size: 14px;
+}
+
+.question_answer text::before {
+    content: "答："
+}
+
+.question_answer image{
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+/*最近预约*/
+.horizontal_flex {
+    position: relative;
+}
+
+.horizontal_flex image{
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+}
+.wenmei_item_title{
+    padding-left: 30px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #313131;
+    white-space: nowrap
+}
+.wenmei_item_right{
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 15px;
+    color: #4098ea
+}
+.wenmei_item_time{
+    font-size: 14px;
+    color: #717171;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+.margin_top{
+    margin-top: 30rpx;
+}

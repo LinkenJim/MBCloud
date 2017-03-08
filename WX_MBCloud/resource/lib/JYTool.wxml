@@ -1,0 +1,10 @@
+<template name="JYTips">
+  <view class="tips" catchtouchmove="aaa" style="height:{{showTips ? '100' : '0'}}%">
+    <view class="tipsText {{showTips ? 'showTips' : ''}}">
+      {{message}}
+    </view>
+  </view>
+</template>
+<template name="toolBarSpace">
+  <view class="toolBarSpace"></view>
+</template>

@@ -1,0 +1,60 @@
+<import src="/resource/utils/util.wxml" />
+<import src="/resource/lib/JYTool.wxml" />
+
+<!--tips模板-->
+<template is="JYTips" data="{{...JYTips}}" />
+
+<!--导航栏下线模板-->
+<template is="navBottomLine" />
+<view class="contain">
+  <view class="detailContent">
+    <view class="horizontal_flex">
+      <image src="{{image}}"></image>
+      <view class="header_right">
+        <text>{{name}}</text>
+        <view class="horizontal_flex">
+          <text>{{title}}</text>
+          <text>{{sex == 1 ?"男":"女"}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="horizontal_item">
+      <text class="key">擅长项目：</text>
+      <text class="value">双眼皮、隆鼻、隆胸、综合眼部
+      </text>
+    </view>
+    <view class="horizontal_item">
+      <text class="key">所属医院:</text>
+      <text class="value">{{hospital_name}}</text>
+      <!--<view class="item_content_right">
+        <image src="/resource/image/arrow_more@3x.png"></image>
+      </view>-->
+    </view>
+    <view class="horizontal_item">
+      <text class="key">地址：</text>
+      <text class="value">{{address}}</text>
+      <!--<view class="item_content_right">
+        <image src="/resource/image/arrow_more@3x.png"></image>
+      </view>-->
+    </view>
+    <view class="horizontal_item">
+      <text class="key">简介：</text>
+      <text class="value">{{brief}}</text>
+    </view>
+  </view>
+  <view class="detailLine"></view>
+  <view class="example" catchtap="gotoCase">
+    <text>医生案例</text>
+    <view class="item_content_right">
+      <image src="/resource/image/arrow_more@3x.png"></image>
+    </view>
+  </view>
+<view class="horizontal_line"></view>
+
+  <!--底部栏-->
+  <view class="bottomChoose" bindtap="gotoOrder">
+    <!--<view class="bottom_item">在线问美</view>-->
+    <!--<view class="bottom_line"></view>-->
+    <view class="bottom_item">预约面诊</view>
+  </view>
+</view>

@@ -1,0 +1,62 @@
+<import src="/resource/utils/util.wxml" />
+<import src="/resource/lib/JYTool.wxml" />
+
+<!--导航栏下线模板-->
+<template is="navBottomLine" />
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="content">
+    <view class="horizontal_flex">
+      <view class="data_style">
+        <view class="date_style">
+          <picker mode="date" value="{{order_date}}" start="{{order_date}}" bindchange="bindDateChange">
+            <view class="picker font">
+              {{order_date}}
+            </view>
+          </picker>
+        </view>
+        <view class="gender">
+          <image src="/resource/image/dianji_3@x.png"></image>
+        </view>
+      </view>
+      <view class="time_style" bindtap="chooseTime">
+        <view class="horizontal_flex">
+          <view class="date_style">
+            <text>{{time}}</text>
+          </view>
+          <view class="gender">
+            <image src="/resource/image/dianji_3@x.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="item_style">
+      <input class="font" placeholder-class="font" placeholder="联系姓名" bindinput="bindNameInput" />
+    </view>
+    <view class="item_style" bindtap="chooseGender">
+      <view class="horizontal_flex">
+        <view class="date_style">
+          <text class="font">{{gender}}</text>
+        </view>
+        <view class="gender">
+          <image src="/resource/image/dianji_3@x.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="item_style">
+      <input class="font" placeholder-class="font" placeholder="年龄" bindinput="bindAgeInput" />
+    </view>
+    <view class="item_style">
+      <input class="font" placeholder-class="font" maxlength="11" placeholder="手机号码" bindinput="bindPhoneInput" />
+    </view>
+    <view class="horizontal_flex">
+      <view class="item_code_style">
+        <input class="font" placeholder-class="font" placeholder="手机验证码" bindinput="bindCodeInput" />
+      </view>
+      <button class="item_right" bindtap="getCode" disabled="{{btndisable}}">{{getcodetime}}</button>
+    </view>
+    <view class="item_area_style">
+      <textarea class="area font" placeholder-class="font" placeholder="面诊咨询的项目或部位或其他说明" bindinput="bindContentInput" />
+    </view>
+    <button class="btn" formType="submit">提交</button>
+  </view>
+</form>

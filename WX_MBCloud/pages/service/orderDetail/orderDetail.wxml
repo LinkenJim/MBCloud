@@ -1,0 +1,62 @@
+<import src="/resource/utils/util.wxml" />
+<import src="/resource/lib/JYTool.wxml" />
+
+<!--导航栏下线模板-->
+<template is="navBottomLine" />
+<view class="contain">
+  <view class="header_top">
+    <image src="{{detail.doctor_image}}"></image>
+    <view class="vertical_flex">
+      <view class="horizontal_flex">
+        <view class="header_name">{{detail.doctor_name}}</view>
+        <view class="vertical_line"></view>
+        <view class="header_name">{{detail.qualification}}</view>
+        <view class="vertical_line"> </view>
+        <view class="header_name">{{detail.doctor_sex}}</view>
+      </view>
+      <view class="margin_top"></view>
+      <view class="header_good">
+
+        <!--<text>擅长项目：双眼皮、隆鼻、隆胸、综合眼部、下巴</text>-->
+        <text>{{detail.tags}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="order_line"></view>
+  <view class="horizontal_item">
+    <text class="key">预约时间：</text>
+    <text class="value">{{detail.order_date}}</text>
+  </view>
+
+  <!--|{{detial.sex == 1 ? '男' : '女'}}|{{detail.age}}岁|{{detail.phone}}-->
+  <view class="horizontal_item">
+    <view class="first_info">{{detail.name}}</view>
+    <view class="info">{{detail.sex == '1' ? '男' : '女'}}</view>
+    <view class="info">{{detail.age}}岁</view>
+    <view class="last_info">{{detail.phone}}</view>
+  </view>
+  <view class="horizontal_item">
+    <text class="key">备注内容：</text>
+    <text class="value">{{detail.content}}</text>
+  </view>
+  <view class="dark_line"></view>
+  <view class="status">详情</view>
+  <view class="order_line"></view>
+  <view class="horizontal_item">
+    <text class="key">状态：</text>
+    <text class="value" style="color: #4098ea">{{detail.status}}</text>
+  </view>
+  <view class="horizontal_item">
+    <text class="key">说明：</text>
+    <text class="value">{{detail.remark == null ? '' : detail.remark}}</text>
+  </view>
+  <view class="order_buttom">
+    <view class="order_buttom_in">
+      <view class="order_buttom_in_tip">温馨提示：如果修改面诊时间或其他问题请联系客服或致电联系</view>
+      <view class="order_buttom_phone" catchtap="callPhone">
+        <image src="/resource/image/dian_3@x.png"></image>
+        <view>服务热线：020-37887866</view>
+      </view>
+    </view>
+  </view>
+</view>

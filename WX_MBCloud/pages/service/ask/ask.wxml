@@ -1,0 +1,32 @@
+<!--pages/service/ask/ask.wxml-->
+<import src="/resource/utils/util.wxml"/>
+<import src="/resource/lib/JYTool.wxml"/>
+
+<!--导航栏下线模板-->
+<template is="navBottomLine"/>
+
+<!--tips模板-->
+<template is="JYTips" data="{{...JYTips}}"/>
+
+
+<form bindsubmit="formSubmit" report-submit="true"> 
+    <view class="bg">
+        <textarea placeholder="在此写下你的提问" maxlength="240" placeholder-class="placeholder" bindinput="textInput"/>
+        <view class="textCount">{{textCount}}/240</view>
+        <view class="images">
+            <image class="photo" wx:for="{{imageArr}}" src="{{item}}" bindtap="previewImage" data-src="{{item}}"></image>
+            <!--<block wx:if="{{!imageArr ||imageArr.length<3}}">-->
+                <view class="addImage" bindtap="chooesImage">
+                    <image  src="/resource/image/jiatu_3@x.png"></image>
+                    <text>添加图片</text>
+                </view>
+            <!--</block>-->
+        </view>
+    </view>
+    <view>
+        <picker bindchange="picker" mode="selector" value="{{index}}" range="{{typeList}}" range-key="title">
+            <view class="picker">{{category == '' ? '想美哪里美哪里' : category.title}}</view>
+        </picker>
+        <button formType="submit" class="submit">提交</button>
+    </view>
+</form>

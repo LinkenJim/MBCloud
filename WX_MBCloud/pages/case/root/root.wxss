@@ -1,0 +1,203 @@
+/* pages/case/root/root.wxss */
+@import "/resource/lib/JYToolBar.wxss";
+
+.toolBar {
+  position: fixed;
+  left: 0px;
+  z-index: 100;
+  width: 100%;
+}
+
+.categoryBar {
+  display: flex;
+  height: 113px;
+}
+
+.categoryBar_all {
+  width: 40px;
+  padding: 15px 5px 0px 5px;
+  margin: 20px 5px;
+}
+
+.categoryBar_all image {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 0px auto;
+}
+
+.categoryBar_all text {
+  margin-top: 30px;
+  display: block;
+  font-size: 12px;
+  text-align: center;
+}
+
+.categoryBar scroll-view {
+  white-space: nowrap;
+}
+
+.categoryBar_item {
+  display: inline-block;
+  width: 80px;
+  height: 113px;
+}
+
+.categoryBar_item image {
+  display: block;
+  margin: 10px auto 0px auto;
+  width: 60px;
+  height: 60px;
+}
+
+.categoryBar_item text {
+  margin-top: 10px;
+  font-size: 13px;
+  text-align: center;
+  position: absolute;
+  line-height: 14px;
+  display: -webkit-box;
+  width: 80px;
+  word-break: break-all;
+  white-space: normal;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.action text {
+  color: #d140b5;
+}
+
+.question {
+  display: flex;
+}
+
+.avatar {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.detail {
+  flex: 1;
+  margin-left: 4px;
+  position: relative;
+}
+
+.detail text {
+  /*display: block;*/
+  display: -webkit-box;
+}
+
+.name {
+  color: #576e9f;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.content {
+  color: #444;
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 15px;
+  line-height: 16px;
+  word-break: break-all;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.images {
+  justify-content: space-between;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.image_bg {
+  display: block;
+  float: left;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.image_bg image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.image_bg text {
+  width: 40px;
+  height: 12px;
+  font-size: 11px;
+  color: white;
+  background-color: black;
+  opacity: 0.5;
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  line-height: 15px;
+  text-align: center;
+}
+
+.question_category image {
+  width: 10px;
+  height: 10px;
+}
+
+.question_category {
+  margin-top: 14px;
+  color: #d140b5;
+  font-size: 12px;
+  display: flex;
+}
+
+.question_category_text {
+  display: block;
+  flex: 1;
+  text-align: right;
+  color: #979797;
+  font-size: 12px;
+}
+
+.activity_item {
+  /*height: 145px;*/
+  position: relative;
+}
+
+.activity_item image {
+  display: block;
+}
+
+.activity_item_bottom {
+  width: 100%;
+  height: 32px;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+}
+
+.activity_item_bottom text {
+  display: block;
+  font-size: 13px;
+  color: white;
+  line-height: 32px;
+}
+
+.activity_item_bottom_time {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.activity_item_bottom_status {
+  width: 60px;
+  text-align: right;
+  margin-right: 15px;
+}

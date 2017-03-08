@@ -1,0 +1,19 @@
+<template name="noData">
+    <view class="noData">
+        <image src="/resource/image/empty.png"></image>
+        暂无更多数据
+    </view>
+</template>
+
+<template name="suspensionBtn">
+<view class="server_bg">
+    <view class="server">
+        <contact-button size="20" type="default-light" session-from="MBCloud"></contact-button>
+    </view>
+    <text>联系客服</text>
+</view>
+</template>
+
+<template name="navBottomLine">
+    <view class="navBottomLine"></view>
+</template>

@@ -1,0 +1,55 @@
+/*客服按钮悬浮样式*/
+
+.server_bg {
+    position: fixed;
+    /*left: 50%;*/
+    right: 15px;
+    bottom: 15px;
+    width: 40px;
+    /*height: 30px;*/
+    text-align: center;
+    z-index: 10000;
+}
+.server{
+    margin: 0px auto;
+    width: 30px;
+    height: 30px;
+    background-color: #d140b5;
+    z-index: 99999;
+    line-height: 40px;
+    border-radius: 15px;
+    opacity:0.8;
+}
+
+.server_bg text {
+    font-size: 10px;
+}
+
+/*无数据样式*/
+.noData{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 15px;
+    color: gray;
+    height: 150px;
+}
+
+.noData image{
+    width: 200px;
+    height: 78px;
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*顶部横线*/
+.navBottomLine{
+    position: fixed;
+    height: 1px;
+    z-index: 10000;
+    width: 100%;
+    background-color: #cecece;
+    top: 0px;
+    padding: 0px 5px;
+}

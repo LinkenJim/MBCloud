@@ -1,0 +1,157 @@
+
+<!--pages/service/root/root.wxml-->
+<import src="/resource/utils/util.wxml" />
+<import src="/resource/lib/JYTool.wxml" />
+
+<!--导航栏下线模板-->
+<template is="navBottomLine" />
+
+<!--tips模板-->
+<template is="JYTips" data="{{...JYTips}}" />
+
+<!--悬浮按钮模板-->
+<template is="suspensionBtn" />
+
+<!--topBar-->
+<view class="toolBar topBar">
+  <view wx:for="{{topBar.list}}" class="toolBarItem {{topBar.currentIndex == index ? 'selectItem' : ''}}" data-index="{{index}}" catchtap="{{topBar.action}}">{{item}}
+    <view class="line" style="width:{{topBar.width ? topBar.width : 0}}px;display:{{topBar.currentIndex == index ? 'block' : 'none'}}"></view>
+  </view>
+</view>
+
+<!--toolBarSpace-->
+<template is="toolBarSpace" />
+<view wx:for="{{topBar.list}}" data-index="{{index}}" hidden="{{topBar.currentIndex != index }}">
+  <block wx:if="{{index==0}}">
+    <view class="service_root_section">
+      <view class="service_root_row logo">
+        <view>
+          <image src="/resource/image/logo.png"></image>
+        </view>
+        <text>中国医美行业掌上云技术服务平台</text>
+      </view>
+      <view class="service_root_row mune" bindtap="gotoAsk">
+        <image src="/resource/image/wenm_iocn.png"></image>
+        <view>
+          <text class="mune_title">在线问美</text>
+          <text class="mune_describe">快速了解自己怎么样才算美</text>
+        </view>
+        <image class="more" src="/resource/image/arrow_more@3x.png"></image>
+      </view>
+      <view class="service_root_row mune" bindtap="gotoBooking">
+        <image src="/resource/image/wenz_iocn.png"></image>
+        <view>
+          <text class="mune_title">预约面诊</text>
+          <text class="mune_describe">专家全程免费为你面诊，制定美丽方案</text>
+        </view>
+        <image class="more" src="/resource/image/arrow_more@3x.png"></image>
+      </view>
+    </view>
+    <view class="toolBar">
+      <view wx:key="*this" wx:for="{{JYlist.list}}" class="toolBarItem {{JYlist.currentIndex == index ? 'selectItem' : ''}}" data-index="{{index}}" bindtap="{{JYlist.action}}">{{item}}
+        <view class="line" style="width:{{JYlist.width ? JYlist.width : 0}}px;display:{{JYlist.currentIndex == index ? 'block' : 'none'}}"></view>
+      </view>
+    </view>
+    <view wx:key="*this" wx:for="{{JYlist.list}}" data-index="{{index}}" hidden="{{JYlist.currentIndex != index }}">
+      <block wx:if="{{index==0}}">
+        <view class="service_root_section">
+          <view wx:key="id" wx:for="{{questionList}}" class="service_root_row" bindtap="gotoQuestionDetail" data-item-id="{{item.id}}" data-is-answer="{{item.status}}">
+            <view class="question">
+              <image src="/resource/image/tiwen_iocn.png"></image>
+              <text>{{item.problem}}</text>
+            </view>
+            <block wx:if="{{item.status != '0'}}">
+              <view class="question_answer">
+                <text>{{item.content}}</text>
+                <image src="{{item.doctor_image  || '/resource/image/MBC_placeholder.png'}}"></image>
+              </view>
+            </block>
+            <view>
+              <view class="question_category">
+                <view>
+                  <image src="/resource/image/label_iocn.png"></image>
+                  {{item.tags_title}}
+                </view>
+                <block wx:if="{{item.status == '0'}}">
+                  <text class="question_category_text">未回复</text>
+                </block>
+              </view>
+            </view>
+          </view>
+        </view>
+        <block wx:if="{{questionList != undefined && questionList.length > 0}}">
+          <view class="lookAll" bindtap="lookAll">查看全部内容</view>
+        </block>
+        <block wx:else>
+          <template is="noData" />
+        </block>
+      </block>
+      <block wx:else>
+
+        <!--最近预约-->
+        <view class="service_root_section">
+          <view wx:key="id" wx:for="{{bookingList}}" class="service_root_row" bindtap="gotoBookingDetail" data-item-id="{{item.id}}">
+            <view>
+              <view class="horizontal_flex">
+                <image src="/resource/image/ren_3@x.png"></image>
+                <text class="wenmei_item_title">{{item.doctor_name}}</text>
+                <view class="wenmei_item_right">
+                  <text>{{item.status}}</text>
+                </view>
+              </view>
+              <view class="margin_top"></view>
+              <view class="horizontal_flex">
+                <image src="/resource/image/time_3@x.png"></image>
+                <text class="wenmei_item_title">预约时间：</text>
+                <text class="wenmei_item_time">{{item.order_date}} {{item.order_time == 'AM' ? '上午' : (item.order_time == null ? '' : '下午')}}</text>
+              </view>
+              <view class="margin_top"></view>
+              <view class="horizontal_flex">
+                <image src="/resource/image/yu_3@x.png"></image>
+                <text class="wenmei_item_title">预约备注：</text>
+                <text class="wenmei_item_time">{{item.content}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <block wx:if="{{bookingList != undefined && bookingList.length > 0}}">
+          <view class="lookAll" bindtap="lookAll">查看全部内容</view>
+        </block>
+        <block wx:else>
+          <template is="noData" />
+        </block>
+      </block>
+    </view>
+  </block>
+  <block wx:else>
+    <view wx:key="id" wx:for="{{cqList}}" class="service_root_section">
+      <view class="service_root_row" bindtap="gotoQuestionDetail" data-item-id="{{item.id}}" data-is-answer="{{item.status}}">
+        <view class="question">
+          <image src="/resource/image/tiwen_iocn.png"></image>
+          <text>{{item.problem}}</text>
+        </view>
+        <block wx:if="{{item.status != '0'}}">
+          <view class="question_answer">
+            <text>{{item.content}}</text>
+            <image src="{{item.doctor_image  || '/resource/image/MBC_placeholder.png'}}"></image>
+          </view>
+        </block>
+        <view>
+          <view class="question_category">
+            <view>
+              <image src="/resource/image/label_iocn.png"></image>
+              {{item.tags_title}}
+            </view>
+            <block wx:if="{{item.status == '0'}}">
+              <text class="question_category_text">未回复</text>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="noMoreData" hidden="{{!noMoreData}}">已无更多数据</view>
+    <block wx:if="{{questionList == undefined || questionList.length <= 0}}">
+      <template is="noData" />
+    </block>
+  </block>
+</view>

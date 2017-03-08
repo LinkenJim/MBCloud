@@ -1,0 +1,37 @@
+<import src="/resource/utils/util.wxml" />
+<import src="/resource/lib/JYTool.wxml" />
+
+<!--导航栏下线模板-->
+<template is="navBottomLine" />
+<view class="header">
+  <image src="{{detail.doctor_image}}"></image>
+  <view class="header_middle">
+    <view class="horizontal_flex">
+      <text class="header_text">{{detail.doctor_name}}</text>
+
+      <text class="header_text postion">{{detail.qualification}}</text>
+      <text class="header_text">{{detail.doctor_sex}}</text>
+    </view>
+    <view class="horizontal_flex">
+      <image src="/resource/image/label_iocn.png"></image>
+      <text class="header_title">{{detail.type}}</text>
+      <text class="header_time">{{detail.date}}</text>
+    </view>
+  </view>
+  <view class="body_item_right" catchtap="gotoDoctorDetail" data-id="{{detail.doctor_id}}">
+    <text class="text">详情</text>
+  </view>
+</view>
+<view class="example_title">【{{detail.title}}】</view>
+
+<view class="images">
+  <view class="image_bg">
+    <image src="{{detail.before_image}}" style="width:{{(screen_width- 70)/2}}px;height:{{(screen_width- 70)/2}}px" data-src="{{detail.before_image}}" catchtap="previewImage"></image>
+    <text>before</text>
+  </view>
+  <view class="image_bg">
+    <image src="{{detail.after_image}}" style="width:{{(screen_width- 70)/2}}px;height:{{(screen_width- 70)/2}}px" data-src="{{detail.after_image}}" catchtap="previewImage"></image>
+    <text>after</text>
+  </view>
+</view>
+<view class="example_content">{{detail.content}}</view>

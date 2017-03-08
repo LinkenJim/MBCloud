@@ -1,0 +1,57 @@
+
+<!--pages/service/booking/booking.wxml-->
+<import src="/resource/utils/util.wxml" />
+<import src="/resource/lib/JYTool.wxml" />
+
+<!--导航栏下线模板-->
+<template is="navBottomLine" />
+
+<!--tips模板-->
+<view class="contain">
+
+  <!--<template is="JYTips" data="{{...JYTips}}"/>-->
+  <view class="header">
+
+    <!--<view class="header_content" catchtap="goodAt">-->
+
+    <!--<text>擅长项目</text>-->
+
+    <!--<image src="/resource/image/down.png"></image>-->
+
+    <!--</view>-->
+
+    <!--<view class="header_line"></view>-->
+    <view class="header_content" catchtap="professional">
+      <text>{{title}}</text>
+      <image src="/resource/image/down.png"></image>
+    </view>
+  </view>
+  <scroll-view class="top_height">
+    <view catchtap="gotoDetail" wx:for="{{doctorList}}" data-item-id="{{item.id}}">
+      <view class="body_item" >
+        <view class="body_item_left">
+          <view class="horizontal_flex">
+            <image src="{{item.image}}"></image>
+            <view class="body_item_left_top_tight">
+              <view class="horizontal_flex">
+                <text class="body_item_text">{{item.name}}</text>
+                
+                <text class="body_item_text postion">{{item.qualification}}</text>
+                
+                <text class="body_item_text">{{item.sex == 1 ?"男":"女"}}</text>
+              </view>
+              <text class="body_item_goodat"></text>
+            </view>
+          </view>
+          <view class="body_item_left_buttom">
+            <text>{{item.brief}}</text>
+          </view>
+        </view>
+        <view class="body_item_right" catchtap="order" data-item-id="{{item.id}}">
+          <text class="text">立即预约</text>
+        </view>
+      </view>
+      <view class = "item_line"></view>
+    </view>
+  </scroll-view>
+</view>

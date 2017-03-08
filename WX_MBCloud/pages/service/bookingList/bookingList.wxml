@@ -1,0 +1,47 @@
+<import src="/resource/utils/util.wxml" />
+<import src="/resource/lib/JYTool.wxml" />
+
+<!--导航栏下线模板-->
+<template is="navBottomLine" />
+
+<!--tips模板-->
+<template is="JYTips" data="{{...JYTips}}" />
+
+<!--toolBar-->
+<view class="toolBar">
+  <view wx:for="{{JYlist.list}}" class="toolBarItem {{JYlist.currentIndex == index ? 'selectItem' : ''}}" data-index="{{index}}" bindtap="{{JYlist.action}}">{{item}}
+    <view class="line" style="width:{{JYlist.width ? JYlist.width : 0}}px;display:{{JYlist.currentIndex == index ? 'block' : 'none'}}"></view>
+  </view>
+</view>
+<!--toolBarSpace-->
+<template is="toolBarSpace" />
+<!--最近问美-->
+<view class="service_root_section">
+  <view wx:key="id" wx:for="{{bookingList}}" class="service_root_row" bindtap="gotoBookingDetail" data-item-id="{{item.id}}">
+    <view>
+      <view class="horizontal_flex">
+        <image src="/resource/image/ren_3@x.png"></image>
+        <text class="wenmei_item_title">{{item.doctor_name}}</text>
+        <view class="wenmei_item_right">
+          <text>{{item.status}}</text>
+        </view>
+      </view>
+      <view class="margin_top"></view>
+      <view class="horizontal_flex">
+        <image src="/resource/image/time_3@x.png"></image>
+        <text class="wenmei_item_title">预约时间：</text>
+        <text class="wenmei_item_time">{{item.order_date}} {{item.order_time == 'AM' ? '上午' : (item.order_time == null ? '' : '下午')}}</text>
+      </view>
+      <view class="margin_top"></view>
+      <view class="horizontal_flex">
+        <image src="/resource/image/yu_3@x.png"></image>
+        <text class="wenmei_item_title">预约备注：</text>
+        <text class="wenmei_item_time">{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<block wx:if="{{bookingList == undefined || bookingList.length <= 0}}">
+  <template is="noData" />
+</block>
+<view wx:else class="noMoreData" hidden="{{!noMoreData}}">已无更多数据</view>

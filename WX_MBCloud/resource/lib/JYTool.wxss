@@ -1,0 +1,34 @@
+/*提示样式*/
+.tips{
+    position: fixed;
+    height: 0%;
+    width: 100%;
+    top: 0px;
+    z-index: 100000;
+}
+
+.tipsText{
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    background-color: #404040;
+    width: 60%;
+    height: auto;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    transition: 0.5s;
+    font-size: 15px;
+    padding: 8px 0px;
+}
+
+.showTips{
+    opacity: 0.85;
+}
+
+.toolBarSpace{
+    height: 47px;
+}

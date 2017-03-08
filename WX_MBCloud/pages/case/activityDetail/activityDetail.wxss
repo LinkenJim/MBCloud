@@ -1,0 +1,59 @@
+/* pages/case/activityDetail/activityDetail.wxss */
+page{
+    background-color: white;
+}
+.activity_detail {
+    margin: 16px 18px 66px 18px;
+}
+
+.activity_detail text,.activity_detail image {
+  display: block;
+}
+
+.activity_detail text{
+    width: 100%;
+}
+
+.activity_detail image{
+    margin: 0px auto;
+    margin-bottom: 10px;
+}
+
+.title{
+    margin-bottom: 10px;
+}
+
+.content{
+    font-size: 14px;
+    color: #6f6f6f;
+}
+
+/*底部回复栏*/
+
+.bottomBar {
+  position: fixed;
+  height: 46px;
+  bottom: 0px;
+  width: 100%;
+  left: 0px;
+  display: flex;
+  z-index: 9999;
+  background-color: #fcfcfc;
+  border-top: 1px solid lightgray;
+  /*overflow: hidden;*/
+}
+
+.bottomBar text{
+    font-size: 15px;
+    color: #d269e8;
+    text-align: center;
+    line-height: 46px;
+    width: 100%;
+    display: block;
+    height: 100%;
+}
+
+.server_bg {
+    bottom: 61px;
+}
+

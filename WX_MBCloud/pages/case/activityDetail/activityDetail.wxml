@@ -1,0 +1,22 @@
+<!--pages/case/activityDetail/activityDetail.wxml-->
+<import src="/resource/utils/util.wxml" />
+<import src="/resource/lib/JYTool.wxml" />
+
+<!--导航栏下线模板-->
+<template is="navBottomLine" />
+
+<!--tips模板-->
+<template is="JYTips" data="{{...JYTips}}" />
+
+<!--悬浮按钮模板-->
+<template is="suspensionBtn" />
+<view class="activity_detail">
+  <text class="title">【{{detail.title}}】</text>
+  <image src="{{detail.image}}" style="width:{{screen_width-36}}px;height:{{(screen_width-36)/19*9}}px"></image>
+  <text class="content">{{detail.content}}</text>
+</view>
+
+<!--底部回复栏   -->
+<view class="bottomBar" bindtap="gotoApply">
+  <text>立即报名</text>
+</view>

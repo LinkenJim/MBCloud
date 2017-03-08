@@ -1,0 +1,45 @@
+/* pages/service/bookingList/bookingList.wxss */
+@import "/resource/lib/JYToolBar.wxss";
+.toolBar{
+    position: fixed;
+    left: 0px;
+    z-index: 100;
+    width: 100%;
+}
+
+.horizontal_flex {
+    position: relative;
+}
+
+.horizontal_flex image{
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+}
+.wenmei_item_title{
+    padding-left: 30px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #313131;
+    white-space: nowrap
+}
+.wenmei_item_right{
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 15px;
+    color: #4098ea
+}
+.wenmei_item_time{
+    font-size: 14px;
+    color: #717171;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+.margin_top{
+    margin-top: 30rpx;
+}

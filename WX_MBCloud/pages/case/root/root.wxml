@@ -1,0 +1,110 @@
+
+<!--pages/case/root/root.wxml-->
+<import src="/resource/utils/util.wxml" />
+<import src="/resource/lib/JYTool.wxml" />
+
+<!--导航栏下线模板-->
+<template is="navBottomLine" />
+
+<!--tips模板-->
+<template is="JYTips" data="{{...JYTips}}" />
+
+<!--悬浮按钮模板-->
+<template is="suspensionBtn" />
+
+<!--toolBar-->
+<view class="toolBar">
+  <view wx:for="{{JYlist.list}}" class="toolBarItem {{JYlist.currentIndex == index ? 'selectItem' : ''}}" data-index="{{index}}" catchtap="{{JYlist.action}}">{{item}}
+    <view class="line" style="width:{{JYlist.width ? JYlist.width : 0}}px;display:{{JYlist.currentIndex == index ? 'block' : 'none'}}"></view>
+  </view>
+</view>
+
+<!--toolBarSpace-->
+<template is="toolBarSpace" />
+<view wx:for="{{JYlist.list}}" data-index="{{index}}" hidden="{{JYlist.currentIndex != index }}">
+  <block wx:if="{{index==0}}">
+
+    <!--精选案例-->
+    <view>
+      <view class="service_root_section categoryBar">
+        <view class="categoryBar_all  {{currentCategory == -1 ? 'action' : ''}}" bindtap="selectCategory" data-id="-1">
+          <image src="/resource/image/case_all.png"></image>
+          <text>全部</text>
+        </view>
+        <scroll-view scroll-x="true" scroll-top="1000px" style="width: {{screen_width - 60}}px">
+          <view class="categoryBar_item  {{currentCategory == item.id ? 'action' : ''}}" wx:for="{{categoryList}}" bindtap="selectCategory" data-id="{{item.id}}">
+            <image src="{{item.image}}"></image>
+            <text>{{item.name}}</text>
+          </view>
+        </scroll-view>
+      </view>
+      <view wx:key="id" wx:for="{{caseList}}" class="service_root_section">
+        <view class="service_root_row" bindtap="gotoCaseDetail" data-index="{{index}}">
+
+          <!--案例item-->
+          <view class="question">
+            <image class="avatar" src="{{item.head_image || '/resource/image/MBC_placeholder.png'}}"></image>
+            <view class="detail">
+              <text class="name">{{item.title}}</text>
+              <text class="content">{{item.excerpt}}</text>
+              <view class="images">
+                <view class="image_bg">
+                  <image src="{{item.before_image || '/resource/image/MBC_placeholder.png'}}" style="width:{{(screen_width- 106)/2}}px;height:{{(screen_width- 106)/2}}px" data-src="{{item.before_image}}" data-index="{{index}}" catchtap="previewImage"></image>
+                  <text>before</text>
+                </view>
+                <view class="image_bg">
+                  <image src="{{item.after_image || '/resource/image/MBC_placeholder.png'}}" style="width:{{(screen_width- 106)/2}}px;height:{{(screen_width- 106)/2}}px" data-src="{{item.after_image}}" data-index="{{index}}" catchtap="previewImage"></image>
+                  <text>after</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view>
+            <view class="question_category">
+              <view>
+                <image src="/resource/image/label_iocn.png"></image>
+                {{item.type}}
+              </view>
+                <text class="question_category_text">{{item.date}}</text>
+            </view>
+          </view>
+
+          <!--案例item-->
+        </view>
+      </view>
+      <view class="noMoreData" hidden="{{!cnoMoreData || caseList.length <= 0}}">已无更多数据</view>
+      <block wx:if="{{caseList == undefined || caseList.length <= 0}}">
+        <template is="noData" />
+      </block>
+    </view>
+
+    <!--精选案例-->
+  </block>
+  <block wx:else>
+
+    <!--热门活动-->
+    <view>
+      <view wx:key="id" wx:for="{{activityList}}" class="service_root_section">
+        <view class="service_root_row" bindtap="gotoActivityDetail" data-index="{{index}}">
+
+          <!--活动item-->
+          <view class="activity_item">
+          <image src="{{item.image || '/resource/image/MBC_placeholder.png'}}" style="height: {{(screen_width - 22)*1/2}}px;width: {{screen_width - 22}}px;"></image>
+          <view class="activity_item_bottom">
+          <text class="activity_item_bottom_time">活动时间：{{item.time}}</text>
+          <text class="activity_item_bottom_status">{{item.status == 0 ? '进行中' : '已结束'}}</text>
+          </view>
+          
+          </view>
+          <!--活动item-->
+        </view>
+      </view>
+      <view class="noMoreData" hidden="{{!anoMoreData || activityList.length <= 0}}">已无更多数据</view>
+      <block wx:if="{{activityList == undefined || activityList.length <= 0}}">
+        <template is="noData" />
+      </block>
+    </view>
+
+    <!--热门活动-->
+  </block>
+</view>

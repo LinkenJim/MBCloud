@@ -1,0 +1,156 @@
+.header_top {
+  margin-left: 15px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical_flex {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.header_top image {
+  width: 50px;
+  height: 50px;
+}
+
+.header_name {
+  font-size: 15px;
+  color: #373737;
+}
+
+.vertical_line {
+  width: 2rpx;
+  background: red;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+}
+
+.header_good {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 580rpx;
+  white-space: nowrap;
+  font-size: 21rpx;
+  color: #b39b76;
+  margin-top: 30rpx;
+}
+
+.horizontal_item {
+  display: flex;
+  flex-direction: row;
+  margin: 8px 15px 0px 15px;
+}
+
+.horizontal_item text {
+  display: block;
+  line-height: 18px;
+}
+
+.key {
+  font-size: 14px;
+  width: 70px;
+}
+
+.value {
+  flex: 1;
+  text-align: left;
+  color: #949494;
+  font-size: 14px;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.info {
+  color: #949494;
+  font-size: 14px;
+  padding: 0px 10px;
+  border-left: 1px solid #c9c9c9;
+  display: inline-block;
+}
+
+.first_info {
+  color: #949494;
+  font-size: 14px;
+  padding: 0px 10px 0px 0px;
+  display: inline-block;
+}
+
+.last_info {
+  color: #949494;
+  font-size: 14px;
+  padding: 0px 0px 0px 10px;
+  display: inline-block;
+  border-left: 1px solid #c9c9c9;
+}
+
+.order_line {
+  background: #eee;
+  height: 1px;
+  margin: 0px 15px;
+}
+
+.dark_line {
+  margin-top: 40rpx;
+  background: #f0eff5;
+  height: 10rpx;
+}
+
+.status {
+  margin-left: 15px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  color: #313131;
+  font-size: 16px;
+}
+
+.status_style {
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.order_buttom {
+  flex: 1;
+  margin-top: 186rpx;
+  background: #f0eff5;
+}
+
+.order_buttom_in {
+  background: #dfdde9;
+  height: 186rpx;
+  margin-top: 22rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order_buttom_in_tip {
+  padding-left: 24rpx;
+  padding-top: 46rpx;
+  font-size: 24rpx;
+  color: #908da1;
+}
+
+.order_buttom_phone {
+  margin-top: 38rpx;
+  font-size: 26rpx;
+  color: #565173;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.order_buttom_phone image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
